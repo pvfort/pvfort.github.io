@@ -1,0 +1,173 @@
+/* :root variables make it easy to change colors later if you want */
+:root {
+    --bg-color: #FDFDFF;       /* Very light off-white/blueish */
+    --text-color: #2D3436;     /* Dark Charcoal for reading */
+    --primary-color: #6C5CE7;  /* Deep Periwinkle/Purple for links/buttons */
+    --accent-color: #A29BFE;   /* Soft Lavender for backgrounds */
+    --nav-bg: #FFFFFF;         /* White navigation */
+    --card-bg: #FFFFFF;        /* White cards */
+    --border-color: #DFE6E9;   /* Light grey borders */
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.8; /* Slightly more spacing for a "light" airy feel */
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #fab1a0; /* Soft coral hover effect */
+}
+
+/* Navigation - Clean White Bar */
+nav {
+    background-color: var(--nav-bg);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    border-bottom: 2px solid var(--accent-color); /* The periwinkle line */
+    box-shadow: 0 2px 10px rgba(108, 92, 231, 0.1);
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #636e72; /* Grey links */
+    font-weight: 400;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Header - The "Periwinkle Gradient" */
+.hero {
+    /* This creates a beautiful purple-to-blue gradient */
+    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+    padding: 120px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 300;
+}
+
+/* The Button */
+.btn {
+    display: inline-block;
+    background-color: white;
+    color: var(--primary-color);
+    padding: 12px 25px;
+    border-radius: 30px; /* Rounder, softer buttons */
+    margin-top: 25px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background-color: #f0f0f0;
+    color: var(--primary-color);
+    transform: translateY(-2px); /* Slight lift */
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+/* Cards for Research/News */
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border: 1px solid #eee;
+    border-top: 4px solid var(--accent-color); /* Purple top accent */
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Very soft shadow */
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--nav-bg);
+    border-top: 1px solid var(--border-color);
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #b2bec3;
+}
