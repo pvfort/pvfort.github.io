@@ -180,3 +180,40 @@ footer {
         text-align: left;
     }
 }
+
+/* --- The Cute Icon --- */
+.nav-name {
+    display: flex;       /* This aligns the name and cat in a row */
+    align-items: center; /* Centers them vertically */
+    gap: 10px;           /* Space between name and cat */
+}
+
+.cat-icon {
+    width: 35px;        /* Adjust size of the cat here */
+    height: auto;
+    cursor: pointer;    /* Changes cursor to a hand */
+    transition: transform 0.2s;
+}
+
+/* The Trigger: When mouse is over the cat */
+.cat-icon:hover {
+    animation: explode-effect 0.6s forwards;
+}
+
+/* The Animation Definitions */
+@keyframes explode-effect {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        /* Midway through: It gets bigger and starts fading */
+        transform: scale(1.5) rotate(-10deg);
+        opacity: 0.8;
+    }
+    100% {
+        /* The End: It's huge and invisible (Exploded!) */
+        transform: scale(3) rotate(20deg);
+        opacity: 0;
+    }
+}
