@@ -189,7 +189,7 @@ footer {
 }
 
 .cat-icon {
-    width: 35px;        /* Adjust size of the cat here */
+    width: 50px;        /* Adjust size of the cat here */
     height: auto;
     cursor: pointer;    /* Changes cursor to a hand */
     transition: transform 0.2s;
