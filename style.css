@@ -1,58 +1,30 @@
-/* :root variables make it easy to change colors later if you want */
+/* Color Palette */
 :root {
-    --bg-color: #FDFDFF;       /* Very light off-white/blueish */
-    --text-color: #2D3436;     /* Dark Charcoal for reading */
-    --primary-color: #6C5CE7;  /* Deep Periwinkle/Purple for links/buttons */
-    --accent-color: #A29BFE;   /* Soft Lavender for backgrounds */
-    --nav-bg: #FFFFFF;         /* White navigation */
-    --card-bg: #FFFFFF;        /* White cards */
-    --border-color: #DFE6E9;   /* Light grey borders */
+    --bg-color: #f8f9fa;       /* Very light grey background */
+    --text-color: #2D3436;     /* Dark grey text */
+    --accent-color: #6C5CE7;   /* Periwinkle Purple for highlights */
+    --link-color: #4834d4;     /* Slightly darker purple for text links */
+    --nav-border: #dfe6e9;     /* Light border for nav */
 }
 
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Lato', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.8; /* Slightly more spacing for a "light" airy feel */
+    line-height: 1.7;
 }
 
-/* Typography */
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 700;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #fab1a0; /* Soft coral hover effect */
-}
-
-/* Navigation - Clean White Bar */
+/* --- Navigation Bar --- */
 nav {
-    background-color: var(--nav-bg);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    border-bottom: 2px solid var(--accent-color); /* The periwinkle line */
-    box-shadow: 0 2px 10px rgba(108, 92, 231, 0.1);
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--nav-border);
+    padding: 1.2rem 0;
 }
 
 .nav-container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -60,114 +32,151 @@ nav {
     padding: 0 20px;
 }
 
-.logo {
+.nav-name {
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color);
-    font-family: 'Playfair Display', serif;
+    color: var(--text-color);
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px;
-}
-
-.nav-links a {
-    color: #636e72; /* Grey links */
-    font-weight: 400;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-/* Hero Header - The "Periwinkle Gradient" */
-.hero {
-    /* This creates a beautiful purple-to-blue gradient */
-    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
-    padding: 120px 20px;
-    text-align: center;
-    color: white;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    color: white;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: #fff;
-    font-weight: 300;
-}
-
-/* The Button */
-.btn {
-    display: inline-block;
-    background-color: white;
-    color: var(--primary-color);
-    padding: 12px 25px;
-    border-radius: 30px; /* Rounder, softer buttons */
-    margin-top: 25px;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.btn:hover {
-    background-color: #f0f0f0;
-    color: var(--primary-color);
-    transform: translateY(-2px); /* Slight lift */
-}
-
-/* Main Content */
-main {
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
-
-section {
-    margin-bottom: 60px;
-}
-
-/* Cards for Research/News */
-.highlights {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
 }
 
-.card {
-    background: var(--card-bg);
-    padding: 25px;
-    border: 1px solid #eee;
-    border-top: 4px solid var(--accent-color); /* Purple top accent */
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Very soft shadow */
-    transition: transform 0.2s;
+.nav-links a {
+    text-decoration: none;
+    color: #636e72;
+    font-size: 1rem;
+    transition: color 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
-.card h3 {
-    font-size: 1.2rem;
-    color: var(--primary-color);
+/* --- Main Layout (Sidebar + Content) --- */
+.profile-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 60px; /* Space between photo and text */
+}
+
+/* Left Side: Photo & Info */
+.profile-sidebar {
+    flex: 1; /* Takes up 1 part of the space */
+    text-align: center;
+    min-width: 250px;
+}
+
+.profile-photo {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.role {
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.university {
+    font-size: 0.9rem;
+    color: #636e72;
+    margin-bottom: 20px;
+}
+
+/* Social Icons List */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #636e72;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Right Side: Bio Text */
+.bio-content {
+    flex: 2; /* Takes up 2 parts of the space (wider) */
+}
+
+.bio-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--text-color);
+}
+
+.divider {
+    border: 0;
+    height: 3px;
+    background: var(--accent-color);
+    width: 50px;
+    margin: 10px 0 30px 0;
+}
+
+.bio-content p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+/* Education List Styling */
+.education-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.education-list li {
+    margin-bottom: 15px;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 15px;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 40px;
-    background-color: var(--nav-bg);
-    border-top: 1px solid var(--border-color);
     margin-top: 50px;
-    font-size: 0.9rem;
     color: #b2bec3;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive: Stack columns on mobile */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .bio-content {
+        text-align: left;
+    }
 }
