@@ -17,76 +17,95 @@
                 <img src="cat-icon.png" class="cat-icon" alt="meow">
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">About Me</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
                 <li><a href="research.html" class="active">Research</a></li>
-                <li><a href="cv.html">CV</a></li>
                 <li><a href="outreach.html">Outreach</a></li>
+                <li><a href="cv.html">CV</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="research-container">
+    <main class="page-container">
         
         <section class="page-header">
             <h1>Research Projects</h1>
-            <p class="subtitle">My work on galaxy evolution, star formation, and instrumentation.</p>
-            <hr class="divider">
+            <p class="subtitle">Galaxy formation, high-redshift emitters, and deep imaging surveys.</p>
+            <hr class="divider" style="margin: 20px auto;">
         </section>
 
         <div class="project-grid">
 
             <article class="project-card">
-                <div class="card-status">In Progress</div>
-                <h2>Tracing Star Formation in LAGER Fields</h2>
-                <p class="project-date">2024 - Present | Master's Thesis</p>
+                <div class="card-status inprogress">M.Sc. Thesis</div>
+                <h2>Tracing Star Formation with Emitters in LAGER Fields</h2>
+                <p class="project-date">2024 - Present | Supervisors: F. Barrientos & P. Hibon</p>
                 <p>
-                    I am using deep DECam imaging to measure the Star Formation Rate Density (SFRD) 
-                    at different epochs. By analyzing H&alpha;, [OIII], and [OII] emitters, we can 
-                    better understand how galaxies evolved in the early universe.
+                    I am analyzing 15 deg² from the LAGER survey using CTIO/Blanco DECam imaging. 
+                    By performing photometric redshift estimation and SED fitting, I identify H&alpha;, [OIII], 
+                    and [OII] emitters to construct luminosity functions and trace cosmic star formation evolution.
                 </p>
                 <div class="tech-stack">
                     <span>Python</span>
                     <span>SExtractor</span>
-                    <span>DECam Data</span>
-                </div>
-                <a href="#" class="card-link">View details <i class="fas fa-arrow-right"></i></a>
-            </article>
-
-            <article class="project-card">
-                <div class="card-status finished">Completed</div>
-                <h2>Photometric Redshift Analysis</h2>
-                <p class="project-date">2023 | Undergraduate Project</p>
-                <p>
-                     worked on estimating photometric redshifts using broad-band photometry.
-                    This involved cleaning catalogs and calibrating zero-points for accurate 
-                    distance measurements.
-                </p>
-                <div class="tech-stack">
-                    <span>Topcat</span>
-                    <span>Matplotlib</span>
+                    <span>DECam</span>
+                    <span>LePHARE</span>
                 </div>
             </article>
 
             <article class="project-card">
-                <div class="card-status finished">Published</div>
-                <h2>Another Cool Astronomy Project</h2>
-                <p class="project-date">2022 | Summer Internship</p>
+                <div class="card-status published">Bachelor's Thesis</div>
+                <h2>Luminosity Function of Galaxies in LAGER</h2>
+                <p class="project-date">2023 | PUC & ESO</p>
                 <p>
-                    Description of another project. Maybe something involving ALMA data or 
-                    spectroscopy. 
+                    Analyzed 3 deg² of the NSF-1 field. Identified emission-line galaxies via narrow-band 
+                    selection at z=0.47, 0.93, and 1.59. This work laid the foundation for my current 
+                    Master's thesis by establishing the selection pipeline.
                 </p>
                 <div class="tech-stack">
-                    <span>Spectroscopy</span>
-                    <span>IRAF</span>
+                    <span>Data Reduction</span>
+                    <span>Photometry</span>
+                    <span>Statistics</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-status community">Course Project</div>
+                <h2>Cluster Galaxies in Abell 2744</h2>
+                <p class="project-date">2023 | Supervisor: F. Bauer</p>
+                <p>
+                    Performed a panchromatic study of cluster galaxies using NUV-NIR photometry. 
+                    I used <strong>CIGALE</strong> for SED fitting to derive stellar masses, ages, 
+                    and star formation rates to study galaxy evolution in dense environments.
+                </p>
+                <div class="tech-stack">
+                    <span>CIGALE</span>
+                    <span>SED Fitting</span>
+                    <span>Galaxy Evolution</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-status published">Observation</div>
+                <h2>CIDER Survey Observations</h2>
+                <p class="project-date">2024 | CTIO</p>
+                <p>
+                    Participated in the "Charting Ionization During the Epoch of Reionization" (CIDER) survey. 
+                    Conducted on-site observations with DECam for 2 nights and multiple remote sessions 
+                    for data acquisition.
+                </p>
+                <div class="tech-stack">
+                    <span>Observing</span>
+                    <span>DECam</span>
+                    <span>Remote Ops</span>
                 </div>
             </article>
 
         </div>
-
     </main>
 
     <footer>
-        <p>&copy; 2024 Patricia Fort.</p>
+        <p>&copy; 2025 Patricia Fort.</p>
     </footer>
 
 </body>
