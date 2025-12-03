@@ -1,26 +1,25 @@
 /* =========================================
-   1. GIRLY & HAPPY COLOR PALETTE
+   1. GIRLY & HAPPY COLORS
    ========================================= */
 :root {
-    /* The "Cotton Candy" Colors */
-    --periwinkle: #8CA9FF;     /* Your favorite blue/purple */
-    --pink: #ff9ff3;           /* Cute Bubblegum Pink */
-    --dark-purple: #5f27cd;    /* Deep purple for reading text */
+    --periwinkle: #8CA9FF;     
+    --pink: #ff9ff3;           
+    --dark-purple: #5f27cd;    
     
-    /* The Gradient */
+    /* The Happy Gradient */
     --happy-gradient: linear-gradient(135deg, var(--pink) 0%, var(--periwinkle) 100%);
     
     /* Backgrounds */
-    --bg-page: #fff0f5;        /* Very light pinkish-white background (Lavender Blush) */
+    --bg-page: #fff0f5;        /* Lavender Blush (Very light pink) */
     --bg-card: #FFFFFF;
     
     /* Text */
     --text-main: #2d3436;
     --text-light: #636e72;
     
-    /* Decoration */
-    --radius: 20px;            /* Very round, soft corners */
-    --shadow: 0 8px 20px rgba(255, 159, 243, 0.25); /* Pink glow shadow */
+    /* Rounded & Cute */
+    --radius: 25px;            
+    --shadow: 0 10px 25px rgba(255, 159, 243, 0.3); 
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -29,7 +28,7 @@ body {
     font-family: 'Lato', sans-serif;
     background-color: var(--bg-page);
     color: var(--text-main);
-    line-height: 1.6;
+    line-height: 1.7;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -44,18 +43,18 @@ h1, h2, h3 {
 a { text-decoration: none; transition: all 0.3s; }
 
 /* =========================================
-   2. CLEAN NAVIGATION (No Dots!)
+   2. CUTE NAVIGATION
    ========================================= */
 nav {
     background-color: white;
     padding: 15px 0;
     position: sticky; top: 0; z-index: 1000;
-    box-shadow: 0 4px 15px rgba(255, 159, 243, 0.1);
-    border-bottom: 3px solid var(--pink); /* Cute Pink Line */
+    box-shadow: 0 4px 15px rgba(255, 159, 243, 0.15);
+    border-bottom: 3px solid var(--pink);
 }
 
 .nav-container {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -80,122 +79,105 @@ nav {
     100% { transform: scale(3) rotate(20deg); opacity: 0; }
 }
 
-/* The Links Area */
-.nav-links {
-    list-style: none; /* KEY: Removes the dots */
-    display: flex;
-    gap: 35px;
-}
-
-.nav-links li {
-    display: inline-block; /* Ensures they sit in a line */
-}
+.nav-links { list-style: none; display: flex; gap: 30px; }
 
 .nav-links a {
     color: var(--text-light);
     font-size: 1.1rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
     position: relative;
 }
 
-/* Cute underline effect */
-.nav-links a:hover, .nav-links a.active {
-    color: var(--pink);
-}
+/* Pink Underline Hover */
+.nav-links a:hover, .nav-links a.active { color: var(--pink); }
 .nav-links a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 3px;
+    content: ''; display: block; width: 0; height: 3px;
     background: var(--happy-gradient);
-    transition: width 0.3s;
-    border-radius: 2px;
+    transition: width 0.3s; border-radius: 2px;
 }
-.nav-links a:hover::after, .nav-links a.active::after {
-    width: 100%;
-}
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
 /* =========================================
-   3. HOME & LAYOUTS
+   3. LAYOUTS & CARDS
    ========================================= */
 .home-container, .profile-container, .page-container {
-    max-width: 1000px;
+    max-width: 950px;
     margin: 50px auto;
     padding: 0 20px;
     width: 100%;
 }
 
-/* Home Page Box */
+/* Home Box */
 .home-split {
-    display: flex; align-items: center; gap: 60px;
-    background: white; padding: 60px; border-radius: var(--radius);
+    display: flex; align-items: center; gap: 50px;
+    background: white; padding: 50px; border-radius: var(--radius);
     box-shadow: var(--shadow);
-    border: 2px solid white; /* Clean border */
+    border: 3px solid white; /* Clean white border */
 }
+
 .home-photo {
-    width: 280px; height: 280px; object-fit: cover; border-radius: 50%;
+    width: 260px; height: 260px; object-fit: cover; border-radius: 50%;
     border: 6px solid white; 
-    box-shadow: 0 0 0 6px var(--pink); /* Pink Ring! */
+    box-shadow: 0 0 0 6px var(--pink); /* The Pink Ring */
 }
+
 .text-section h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     background: var(--happy-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
+
 .tagline {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--periwinkle);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-/* Cute Buttons */
+/* About Page Sidebar Layout */
+.profile-container { display: flex; gap: 40px; }
+.profile-sidebar { flex: 1; min-width: 250px; }
+
+.bio-content, .contact-box { 
+    background: white; padding: 40px; 
+    border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.contact-box { padding: 30px; margin-bottom: 25px; text-align: center; }
+.contact-box h3 { color: var(--pink); margin-bottom: 10px; }
+
+/* Cute Divider */
+.divider {
+    height: 5px; background: var(--pink); width: 50px;
+    margin: 15px 0 25px 0; border-radius: 10px;
+}
+
+/* Buttons */
 .btn-main {
     background: var(--happy-gradient);
     color: white; padding: 12px 30px; border-radius: 50px; font-weight: bold;
     box-shadow: 0 5px 15px rgba(255, 159, 243, 0.4);
+    display: inline-block;
 }
 .btn-main:hover { transform: translateY(-3px); color: white; }
 
 .btn-secondary {
     background: white; color: var(--periwinkle); border: 2px solid var(--periwinkle);
-    padding: 10px 28px; border-radius: 50px; font-weight: bold;
+    padding: 10px 28px; border-radius: 50px; font-weight: bold; display: inline-block;
 }
 .btn-secondary:hover { background: var(--periwinkle); color: white; }
 
-/* About Page Sidebar */
-.profile-container { display: flex; gap: 40px; }
-.profile-sidebar { flex: 1; min-width: 250px; }
-
-/* Boxes with Soft Shadow */
-.bio-content, .contact-box { 
-    background: white; 
-    padding: 40px; 
-    border-radius: var(--radius); 
-    box-shadow: var(--shadow);
-}
-.contact-box { padding: 30px; margin-bottom: 20px; }
-.contact-box h3 { color: var(--pink); margin-bottom: 15px; }
-
-.divider {
-    height: 4px;
-    background: var(--pink);
-    width: 60px; margin: 15px 0 30px 0; border-radius: 2px; border: none;
-}
-
 /* Images in text */
 .float-img-right {
-    float: right; width: 240px; margin-left: 30px; margin-bottom: 20px;
-    border-radius: var(--radius); box-shadow: var(--shadow);
+    float: right; width: 220px; margin-left: 30px; margin-bottom: 20px;
+    border-radius: var(--radius); box-shadow: var(--shadow); transform: rotate(2deg); /* Cute tilt */
 }
 
-/* Mobile Fixes */
+/* Mobile */
 @media (max-width: 800px) {
     .home-split, .profile-container { flex-direction: column; text-align: center; }
     .nav-container { flex-direction: column; gap: 15px; }
     .nav-links { flex-wrap: wrap; justify-content: center; }
-    .float-img-right { float: none; width: 100%; margin: 20px 0; }
+    .float-img-right { float: none; width: 100%; margin: 20px 0; transform: rotate(0deg); }
 }
