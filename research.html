@@ -26,76 +26,55 @@
     <main class="page-container">
         <div class="page-header">
             <h1>Research Projects</h1>
-            <p>Exploring the universe through code and data.</p>
+            <p style="color: var(--text-light);">My work on Galaxy Evolution & Code</p>
         </div>
 
-        <div class="card-stack">
+        <article class="box-card">
+            <div class="card-img-container">
+                <img src="research-lager.jpg" alt="LAGER Field" class="card-img">
+            </div>
+            <div class="card-content">
+                <h2>Tracing Star Formation in LAGER Fields</h2>
+                <p class="project-date">2024 - Present | M.Sc. Thesis</p>
+                <p class="card-desc">
+                    I'm analyzing 15 deg² of DECam imaging to measure Star Formation Rate Density (SFRD). 
+                    [cite_start]Using Python, I identify H&alpha; and [OIII] emitters to see how galaxies grew in the early universe[cite: 12].
+                </p>
+                <div class="tech-stack"><span>Python</span><span>SExtractor</span><span>LePHARE</span></div>
+            </div>
+        </article>
 
-            <article class="horizontal-card">
-                <div class="card-img-container">
-                    <img src="research-lager.jpg" alt="LAGER Field" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h2>Tracing Star Formation in LAGER Fields</h2>
-                    <p class="project-date">2024 - Present | M.Sc. Thesis</p>
-                    <p class="card-desc">
-                        Analyzing 15 deg² of DECam imaging to measure Star Formation Rate Density (SFRD). 
-                        I perform photometric redshift estimation and SED fitting to identify H&alpha; and [OIII] emitters.
-                    </p>
-                    <div class="tech-stack">
-                        <span>Python</span><span>SExtractor</span><span>LePHARE</span>
-                    </div>
-                </div>
-            </article>
+        <article class="box-card">
+            <div class="card-img-container">
+                <img src="research-thesis.jpg" alt="Bachelor Thesis" class="card-img">
+            </div>
+            <div class="card-content">
+                <h2>Luminosity Function of Galaxies</h2>
+                <p class="project-date">2023 | Bachelor's Thesis</p>
+                <p class="card-desc">
+                    Analyzed 3 deg² of the NSF-1 field. I built a pipeline to select emission-line galaxies 
+                    [cite_start]via narrow-band selection at z=0.47, 0.93, and 1.59[cite: 33].
+                </p>
+                <div class="tech-stack"><span>Statistics</span><span>Photometry</span></div>
+                <a href="#" class="link-btn">See Thesis <i class="fas fa-file-pdf"></i></a>
+            </div>
+        </article>
+        
+        <article class="box-card">
+            <div class="card-img-container">
+                <img src="research-dre.jpg" alt="Galaxy Modelling" class="card-img">
+            </div>
+            <div class="card-content">
+                <h2>Galaxy Modelling with DRE Code</h2>
+                <p class="project-date">2021 | Research Project</p>
+                <p class="card-desc">
+                    Modeled elliptical galaxies using the Discrete Radius Ellipticals (DRE) code. 
+                    [cite_start]I performed PSF convolution on galaxy models and generated simulated cubes[cite: 48].
+                </p>
+                <div class="tech-stack"><span>Modelling</span><span>PSF Convolution</span></div>
+            </div>
+        </article>
 
-            <article class="horizontal-card">
-                <div class="card-img-container">
-                    <img src="research-thesis.jpg" alt="Bachelor Thesis" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h2>Luminosity Function of Galaxies</h2>
-                    <p class="project-date">2023 | Bachelor's Thesis</p>
-                    <p class="card-desc">
-                        Analyzed 3 deg² of the NSF-1 field to identify emission-line galaxies via narrow-band 
-                        selection at z=0.47, 0.93, and 1.59.
-                    </p>
-                    <div class="tech-stack"><span>Statistics</span><span>Photometry</span></div>
-                </div>
-            </article>
-
-            <article class="horizontal-card">
-                <div class="card-img-container">
-                    <img src="research-cosmos.jpg" alt="COSMOS Field" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h2>LAGER Database: COSMOS Cutouts</h2>
-                    <p class="project-date">2022 | Undergraduate Research</p>
-                    <p class="card-desc">
-                        Developed a database for Lyman Alpha Galaxies in the Epoch of Reionization (LAGER). 
-                        I specialized in creating candidate cutouts for the COSMOS field across multiple bands.
-                    </p>
-                    <div class="tech-stack"><span>Database</span><span>Data Reduction</span></div>
-                </div>
-            </article>
-
-            <article class="horizontal-card">
-                <div class="card-img-container">
-                    <img src="research-dre.jpg" alt="Galaxy Modelling" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h2>Galaxy Modelling with DRE Code</h2>
-                    <p class="project-date">2021 | Research Project</p>
-                    <p class="card-desc">
-                        Modeled elliptical galaxies using the Discrete Radius Ellipticals (DRE) code. 
-                        I performed PSF convolution on galaxy models and generated simulated cubes with 
-                        varied Sérsic profiles.
-                    </p>
-                    <div class="tech-stack"><span>Modelling</span><span>PSF Convolution</span></div>
-                </div>
-            </article>
-
-        </div>
     </main>
-
 </body>
 </html>
