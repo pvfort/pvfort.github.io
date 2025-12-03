@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Patricia Fort</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap">
+    
+    <style>
+        .cv-container { max-width: 800px; margin: 50px auto; padding: 0 20px; }
+        .cv-section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .cv-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .cv-title { font-size: 1.5rem; color: #6C5CE7; border-bottom: 2px solid #dfe6e9; padding-bottom: 10px; margin-bottom: 20px; }
+        .cv-item { margin-bottom: 20px; }
+        .cv-item h3 { font-size: 1.1rem; margin-bottom: 5px; color: #2d3436; }
+        .cv-date { font-size: 0.9rem; color: #636e72; font-style: italic; margin-bottom: 5px; display: block; }
+        .cv-details { font-size: 0.95rem; color: #2d3436; list-style-position: inside; }
+        .download-btn { display: inline-block; background: #2d3436; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; margin-bottom: 20px; }
+        .download-btn:hover { background: #6C5CE7; color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-name">Patricia Fort <img src="cat-icon.png" class="cat-icon" alt="meow"></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="outreach.html">Outreach</a></li>
+                <li><a href="cv.html" class="active">CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="cv-container">
+        
+        <div style="text-align: center;">
+            <h1>Curriculum Vitae</h1>
+            <a href="cv_Patricia_Fort.pdf" class="download-btn" target="_blank">
+                <i class="fas fa-file-pdf"></i> Download PDF
+            </a>
+        </div>
+
+        <section class="cv-section">
+            <h2 class="cv-title">Education</h2>
+            <div class="cv-item">
+                <h3>M.Sc. in Astrophysics</h3>
+                <span class="cv-date">March 2024 - Present | Pontificia Universidad Católica de Chile</span>
+            </div>
+            <div class="cv-item">
+                <h3>B.Sc. in Astronomy</h3>
+                <span class="cv-date">March 2019 - July 2023 | Pontificia Universidad Católica de Chile</span>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2 class="cv-title">Observational Experience</h2>
+            <div class="cv-item">
+                <h3>Magellan Baade Telescope (Las Campanas)</h3>
+                <span class="cv-date">November 2024</span>
+                <p>Designed and executed IMACS multi-object spectroscopy masks. Conducted one full night of observations.</p>
+            </div>
+            <div class="cv-item">
+                <h3>VLT UT4 (Paranal Observatory)</h3>
+                <span class="cv-date">2024</span>
+                <p>Observed for two nights during ESO internship with Dr. Pascale Hibon.</p>
+            </div>
+            <div class="cv-item">
+                <h3>Victor M. Blanco 4m (CTIO)</h3>
+                <span class="cv-date">2024</span>
+                <p>Observed 2 nights on-site for the CIDER survey and multiple remote sessions.</p>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2 class="cv-title">Technical Skills</h2>
+            <ul class="cv-details">
+                <li><strong>Programming:</strong> Python (Advanced), Mathematica, Bash, LaTeX.</li>
+                <li><strong>Libraries:</strong> Astropy, NumPy, SciPy, Matplotlib, Pandas, CIGALE, LePhare.</li>
+                <li><strong>Software:</strong> SExtractor, Topcat, DS9, QFits View, IMACS Maskgen.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Patricia Fort.</p>
+    </footer>
+
+</body>
+</html>
