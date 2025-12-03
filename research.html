@@ -12,10 +12,7 @@
 
     <nav>
         <div class="nav-container">
-            <div class="nav-name">
-                Patricia Fort 
-                <img src="cat-icon.png" class="cat-icon" alt="meow">
-            </div>
+            <div class="nav-name">Patricia Fort <img src="cat-icon.png" class="cat-icon" alt="meow"></div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
@@ -27,86 +24,74 @@
     </nav>
 
     <main class="page-container">
-        
-        <section class="page-header">
+        <div style="text-align: center; margin-bottom: 50px;">
             <h1>Research Projects</h1>
-            <p class="subtitle">Galaxy formation, high-redshift emitters, and deep imaging surveys.</p>
-            <hr class="divider" style="margin: 20px auto;">
-        </section>
+            <p style="color: #636e72;">Galaxy evolution, coding, and data analysis.</p>
+        </div>
 
-        <div class="project-grid">
+        <div class="project-list">
 
-            <article class="project-card">
-                <div class="card-status inprogress">M.Sc. Thesis</div>
-                <h2>Tracing Star Formation with Emitters in LAGER Fields</h2>
-                <p class="project-date">2024 - Present | Supervisors: F. Barrientos & P. Hibon</p>
-                <p>
-                    I am analyzing 15 deg² from the LAGER survey using CTIO/Blanco DECam imaging. 
-                    By performing photometric redshift estimation and SED fitting, I identify H&alpha;, [OIII], 
-                    and [OII] emitters to construct luminosity functions and trace cosmic star formation evolution.
-                </p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>SExtractor</span>
-                    <span>DECam</span>
-                    <span>LePHARE</span>
+            <article class="horizontal-card">
+                <img src="research-lager.jpg" alt="LAGER Survey" class="card-image-side">
+                <div class="card-content-side">
+                    <h2>Tracing Star Formation in LAGER Fields</h2>
+                    <p class="project-date">2024 - Present | M.Sc. Thesis</p>
+                    <p>
+                        Analyzing 15 deg² of DECam imaging to measure the Star Formation Rate Density (SFRD).
+                        I perform photometric redshift estimation and SED fitting to identify H&alpha; and [OIII] emitters.
+                    </p>
+                    <div class="tech-stack">
+                        <span>Python</span><span>SExtractor</span><span>LePHARE</span>
+                    </div>
+                    <a href="#" class="link-btn">View Publication <i class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
 
-            <article class="project-card">
-                <div class="card-status published">Bachelor's Thesis</div>
-                <h2>Luminosity Function of Galaxies in LAGER</h2>
-                <p class="project-date">2023 | PUC & ESO</p>
-                <p>
-                    Analyzed 3 deg² of the NSF-1 field. Identified emission-line galaxies via narrow-band 
-                    selection at z=0.47, 0.93, and 1.59. This work laid the foundation for my current 
-                    Master's thesis by establishing the selection pipeline.
-                </p>
-                <div class="tech-stack">
-                    <span>Data Reduction</span>
-                    <span>Photometry</span>
-                    <span>Statistics</span>
+            <article class="horizontal-card">
+                <img src="research-thesis.jpg" alt="Bachelor Thesis" class="card-image-side">
+                <div class="card-content-side">
+                    <h2>Luminosity Function of Galaxies</h2>
+                    <p class="project-date">2023 | Bachelor's Thesis</p>
+                    <p>
+                        Analyzed 3 deg² of the NSF-1 field to identify emission-line galaxies via narrow-band 
+                        selection. This established the pipeline for my current research.
+                    </p>
+                    <div class="tech-stack"><span>Statistics</span><span>Photometry</span></div>
+                    <a href="#" class="link-btn">Read Thesis <i class="fas fa-file-pdf"></i></a>
                 </div>
             </article>
 
-            <article class="project-card">
-                <div class="card-status community">Course Project</div>
-                <h2>Cluster Galaxies in Abell 2744</h2>
-                <p class="project-date">2023 | Supervisor: F. Bauer</p>
-                <p>
-                    Performed a panchromatic study of cluster galaxies using NUV-NIR photometry. 
-                    I used <strong>CIGALE</strong> for SED fitting to derive stellar masses, ages, 
-                    and star formation rates to study galaxy evolution in dense environments.
-                </p>
-                <div class="tech-stack">
-                    <span>CIGALE</span>
-                    <span>SED Fitting</span>
-                    <span>Galaxy Evolution</span>
+            <article class="horizontal-card">
+                <img src="research-cosmos.jpg" alt="COSMOS Field" class="card-image-side">
+                <div class="card-content-side">
+                    <h2>LAGER Database: COSMOS Cutouts</h2>
+                    <p class="project-date">2022 | Undergraduate Research</p>
+                    <p>
+                        Developed a database for Lyman Alpha Galaxies in the Epoch of Reionization (LAGER). 
+                        I specialized in creating candidate cutouts for the COSMOS field across multiple photometric bands.
+                    </p>
+                    <div class="tech-stack"><span>Database</span><span>Data Reduction</span></div>
+                    <a href="#" class="link-btn">View Code <i class="fab fa-github"></i></a>
                 </div>
             </article>
 
-            <article class="project-card">
-                <div class="card-status published">Observation</div>
-                <h2>CIDER Survey Observations</h2>
-                <p class="project-date">2024 | CTIO</p>
-                <p>
-                    Participated in the "Charting Ionization During the Epoch of Reionization" (CIDER) survey. 
-                    Conducted on-site observations with DECam for 2 nights and multiple remote sessions 
-                    for data acquisition.
-                </p>
-                <div class="tech-stack">
-                    <span>Observing</span>
-                    <span>DECam</span>
-                    <span>Remote Ops</span>
+            <article class="horizontal-card">
+                <img src="research-dre.jpg" alt="Galaxy Modelling" class="card-image-side">
+                <div class="card-content-side">
+                    <h2>Galaxy Modelling with DRE Code</h2>
+                    <p class="project-date">2021 | Research Project</p>
+                    <p>
+                        Modeled elliptical galaxies using the Discrete Radius Ellipticals (DRE) code. 
+                        I performed PSF convolution on galaxy models and generated simulated cubes with 
+                        varied Sérsic profiles.
+                    </p>
+                    <div class="tech-stack"><span>Modelling</span><span>PSF Convolution</span></div>
+                    <a href="#" class="link-btn">View Code <i class="fab fa-github"></i></a>
                 </div>
             </article>
 
         </div>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Patricia Fort.</p>
-    </footer>
 
 </body>
 </html>
