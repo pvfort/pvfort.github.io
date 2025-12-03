@@ -17,9 +17,9 @@
     --text-main: #2d3436;
     --text-light: #636e72;
     
-    /* Rounded & Cute */
-    --radius: 25px;            
-    --shadow: 0 10px 25px rgba(255, 159, 243, 0.3); 
+    /* Decoration */
+    --radius: 20px;            
+    --shadow: 0 8px 20px rgba(255, 159, 243, 0.25); 
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -43,7 +43,7 @@ h1, h2, h3 {
 a { text-decoration: none; transition: all 0.3s; }
 
 /* =========================================
-   2. CUTE NAVIGATION
+   2. NAVIGATION
    ========================================= */
 nav {
     background-color: white;
@@ -80,104 +80,110 @@ nav {
 }
 
 .nav-links { list-style: none; display: flex; gap: 30px; }
-
-.nav-links a {
-    color: var(--text-light);
-    font-size: 1.1rem;
-    font-weight: 700;
-    position: relative;
-}
-
-/* Pink Underline Hover */
+.nav-links a { color: var(--text-light); font-size: 1.1rem; font-weight: 700; position: relative; }
 .nav-links a:hover, .nav-links a.active { color: var(--pink); }
-.nav-links a::after {
-    content: ''; display: block; width: 0; height: 3px;
-    background: var(--happy-gradient);
-    transition: width 0.3s; border-radius: 2px;
-}
-.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
 /* =========================================
-   3. LAYOUTS & CARDS
+   3. SEPARATE BOX LAYOUT (Like CV)
    ========================================= */
-.home-container, .profile-container, .page-container {
+.page-container, .home-container, .profile-container, .cv-container {
     max-width: 950px;
     margin: 50px auto;
     padding: 0 20px;
     width: 100%;
 }
 
-/* Home Box */
-.home-split {
-    display: flex; align-items: center; gap: 50px;
-    background: white; padding: 50px; border-radius: var(--radius);
+.page-header { text-align: center; margin-bottom: 50px; }
+
+/* The "Box" Style - Applied to Research & Outreach Cards */
+.box-card {
+    display: flex;
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
     box-shadow: var(--shadow);
-    border: 3px solid white; /* Clean white border */
+    border: 1px solid white;
+    
+    /* THIS IS THE KEY: Spacing between boxes */
+    margin-bottom: 40px; 
 }
 
+.box-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(140, 169, 255, 0.3); /* Periwinkle glow on hover */
+}
+
+/* Internal Layout of the Box (Image Left, Text Right) */
+.card-img-container {
+    width: 35%; 
+    min-height: 250px;
+}
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    width: 65%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-content h2 { font-size: 1.6rem; margin-bottom: 5px; color: var(--dark-purple); }
+.project-date { color: var(--pink); font-weight: bold; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 15px; }
+.card-desc { color: var(--text-main); margin-bottom: 20px; }
+
+/* Tags */
+.tech-stack { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+.tech-stack span {
+    background: #f0f0f0; 
+    color: var(--text-light);
+    padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;
+}
+
+/* Link Button inside Card */
+.link-btn {
+    display: inline-block; margin-top: 15px; font-weight: bold;
+    color: var(--periwinkle);
+}
+.link-btn:hover { text-decoration: underline; }
+
+
+/* =========================================
+   4. HOME & ABOUT SPECIFICS
+   ========================================= */
+.home-split, .bio-content, .contact-box {
+    background: white; padding: 50px; border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.home-split { display: flex; align-items: center; gap: 50px; }
 .home-photo {
     width: 260px; height: 260px; object-fit: cover; border-radius: 50%;
-    border: 6px solid white; 
-    box-shadow: 0 0 0 6px var(--pink); /* The Pink Ring */
+    border: 6px solid white; box-shadow: 0 0 0 6px var(--pink);
 }
-
 .text-section h1 {
-    font-size: 3.2rem;
-    background: var(--happy-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 15px;
+    font-size: 3.2rem; background: var(--happy-gradient);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px;
 }
+.tagline { font-size: 1.2rem; font-weight: 700; color: var(--periwinkle); margin-bottom: 20px; }
 
-.tagline {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--periwinkle);
-    margin-bottom: 20px;
-}
-
-/* About Page Sidebar Layout */
+/* About Page */
 .profile-container { display: flex; gap: 40px; }
 .profile-sidebar { flex: 1; min-width: 250px; }
-
-.bio-content, .contact-box { 
-    background: white; padding: 40px; 
-    border-radius: var(--radius); box-shadow: var(--shadow);
-}
 .contact-box { padding: 30px; margin-bottom: 25px; text-align: center; }
-.contact-box h3 { color: var(--pink); margin-bottom: 10px; }
-
-/* Cute Divider */
-.divider {
-    height: 5px; background: var(--pink); width: 50px;
-    margin: 15px 0 25px 0; border-radius: 10px;
-}
+.divider { height: 5px; background: var(--pink); width: 50px; margin: 15px 0 25px 0; border-radius: 10px; }
+.float-img-right { float: right; width: 220px; margin-left: 30px; margin-bottom: 20px; border-radius: var(--radius); box-shadow: var(--shadow); transform: rotate(2deg); }
 
 /* Buttons */
-.btn-main {
-    background: var(--happy-gradient);
-    color: white; padding: 12px 30px; border-radius: 50px; font-weight: bold;
-    box-shadow: 0 5px 15px rgba(255, 159, 243, 0.4);
-    display: inline-block;
-}
-.btn-main:hover { transform: translateY(-3px); color: white; }
-
-.btn-secondary {
-    background: white; color: var(--periwinkle); border: 2px solid var(--periwinkle);
-    padding: 10px 28px; border-radius: 50px; font-weight: bold; display: inline-block;
-}
-.btn-secondary:hover { background: var(--periwinkle); color: white; }
-
-/* Images in text */
-.float-img-right {
-    float: right; width: 220px; margin-left: 30px; margin-bottom: 20px;
-    border-radius: var(--radius); box-shadow: var(--shadow); transform: rotate(2deg); /* Cute tilt */
-}
+.btn-main { background: var(--happy-gradient); color: white; padding: 12px 30px; border-radius: 50px; font-weight: bold; box-shadow: 0 5px 15px rgba(255, 159, 243, 0.4); display: inline-block; }
+.btn-secondary { background: white; color: var(--periwinkle); border: 2px solid var(--periwinkle); padding: 10px 28px; border-radius: 50px; font-weight: bold; display: inline-block; }
 
 /* Mobile */
 @media (max-width: 800px) {
-    .home-split, .profile-container { flex-direction: column; text-align: center; }
+    .home-split, .profile-container, .box-card { flex-direction: column; text-align: center; }
     .nav-container { flex-direction: column; gap: 15px; }
-    .nav-links { flex-wrap: wrap; justify-content: center; }
-    .float-img-right { float: none; width: 100%; margin: 20px 0; transform: rotate(0deg); }
+    .card-img-container, .card-content { width: 100%; }
+    .card-img-container { height: 200px; }
 }
