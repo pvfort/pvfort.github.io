@@ -1,219 +1,104 @@
-/* Color Palette */
-:root {
-    --bg-color: #f8f9fa;       /* Very light grey background */
-    --text-color: #2D3436;     /* Dark grey text */
-    --accent-color: #6C5CE7;   /* Periwinkle Purple for highlights */
-    --link-color: #4834d4;     /* Slightly darker purple for text links */
-    --nav-border: #dfe6e9;     /* Light border for nav */
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'Lato', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.7;
-}
-
-/* --- Navigation Bar --- */
-nav {
-    background-color: #ffffff;
-    border-bottom: 1px solid var(--nav-border);
-    padding: 1.2rem 0;
-}
-
-.nav-container {
-    max-width: 1000px;
-    margin: 0 auto;
+/* --- NEW HOME PAGE STYLES --- */
+.home-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0 20px;
+    min-height: 80vh; /* Takes up most of the screen */
+    padding: 20px;
 }
 
-.nav-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-color);
-}
-
-.nav-links {
-    list-style: none;
+.home-split {
     display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #636e72;
-    font-size: 1rem;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: var(--accent-color);
-    font-weight: 700;
-}
-
-/* --- Main Layout (Sidebar + Content) --- */
-.profile-container {
+    align-items: center;
+    gap: 60px;
     max-width: 1000px;
-    margin: 60px auto;
-    padding: 0 20px;
-    display: flex;
-    gap: 60px; /* Space between photo and text */
+    background: white;
+    padding: 60px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.1); /* Soft purple glow */
 }
 
-/* Left Side: Photo & Info */
-.profile-sidebar {
-    flex: 1; /* Takes up 1 part of the space */
-    text-align: center;
-    min-width: 250px;
-}
-
-.profile-photo {
-    width: 220px;
-    height: 220px;
+/* The Professional Photo */
+.home-photo {
+    width: 300px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid white;
+    border-radius: 50%; /* Circle */
+    border: 8px solid #f0f4f8; /* Light grey border */
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
 }
 
-.contact-info h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-}
-
-.role {
-    font-weight: 700;
-    color: var(--accent-color);
-    margin-bottom: 5px;
-}
-
-.university {
-    font-size: 0.9rem;
-    color: #636e72;
-    margin-bottom: 20px;
-}
-
-/* Social Icons List */
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-
-.social-links a {
-    text-decoration: none;
-    color: #636e72;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.social-links a:hover {
-    color: var(--accent-color);
-}
-
-/* Right Side: Bio Text */
-.bio-content {
-    flex: 2; /* Takes up 2 parts of the space (wider) */
-}
-
-.bio-content h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
+.text-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
     color: var(--text-color);
 }
 
-.divider {
-    border: 0;
-    height: 3px;
+.short-divider {
+    width: 60px;
+    height: 4px;
     background: var(--accent-color);
-    width: 50px;
-    margin: 10px 0 30px 0;
+    border: 0;
+    margin: 20px 0;
 }
 
-.bio-content p {
-    margin-bottom: 20px;
-    font-size: 1.05rem;
+.intro-text {
+    font-size: 1.1rem;
+    color: #636e72;
+    margin-bottom: 30px;
+    max-width: 500px;
 }
 
-/* Education List Styling */
-.education-list {
-    list-style: none;
-    margin-top: 20px;
-}
-
-.education-list li {
-    margin-bottom: 15px;
-    border-left: 3px solid var(--accent-color);
-    padding-left: 15px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 40px;
-    margin-top: 50px;
-    color: #b2bec3;
-    font-size: 0.9rem;
-    border-top: 1px solid #eee;
-}
-
-/* Responsive: Stack columns on mobile */
-@media (max-width: 768px) {
-    .profile-container {
+/* Mobile fix for Home Page */
+@media (max-width: 800px) {
+    .home-split {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+        padding: 30px;
     }
-    
-    .bio-content {
-        text-align: left;
-    }
+    .short-divider { margin: 20px auto; }
+    .home-photo { width: 200px; height: 200px; }
 }
 
-/* --- The Cute Icon --- */
-.nav-name {
-    display: flex;       /* This aligns the name and cat in a row */
-    align-items: center; /* Centers them vertically */
-    gap: 10px;           /* Space between name and cat */
+
+/* --- NEW PHOTO STYLES FOR "ABOUT ME" --- */
+
+/* Photo that floats to the right of text */
+.float-img-right {
+    float: right;
+    width: 250px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.cat-icon {
-    width: 50px;        /* Adjust size of the cat here */
+/* Photo that takes up the full width of the text block */
+.full-width-img {
+    width: 100%;
     height: auto;
-    cursor: pointer;    /* Changes cursor to a hand */
-    transition: transform 0.2s;
+    border-radius: 8px;
+    margin: 30px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* The Trigger: When mouse is over the cat */
-.cat-icon:hover {
-    animation: explode-effect 0.6s forwards;
+/* Sidebar updates */
+.contact-box {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: left;
 }
+.contact-box h3 { color: var(--accent-color); margin-bottom: 15px; }
+.contact-box p { margin-bottom: 10px; color: #636e72; }
+.social-links-sidebar { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
 
-/* The Animation Definitions */
-@keyframes explode-effect {
-    0% {
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
-    }
-    50% {
-        /* Midway through: It gets bigger and starts fading */
-        transform: scale(1.5) rotate(-10deg);
-        opacity: 0.8;
-    }
-    100% {
-        /* The End: It's huge and invisible (Exploded!) */
-        transform: scale(3) rotate(20deg);
-        opacity: 0;
+/* Mobile fix for About Page photos */
+@media (max-width: 600px) {
+    .float-img-right {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
     }
 }
