@@ -2,27 +2,23 @@
    1. HAPPY COLOR PALETTE
    ========================================= */
 :root {
-    /* The "Happy" Colors */
     --periwinkle: #8CA9FF;     /* Your base color */
     --turquoise: #00cec9;      /* Fresh Mint/Green */
     --navy: #0984e3;           /* Deep Ocean Blue */
-    --pop-pink: #fd79a8;       /* A tiny touch of pink for fun */
-    
-    /* The "Rainbow" Gradient */
-    --happy-gradient: linear-gradient(90deg, var(--navy) 0%, var(--periwinkle) 50%, var(--turquoise) 100%);
     
     /* Backgrounds */
-    --bg-page: #F0F3F8;        /* Clean light grey-blue */
+    --bg-page: #F0F4F8;        /* Clean light grey-blue */
     --bg-card: #FFFFFF;
+    
+    /* Text */
     --text-main: #2d3436;
     --text-light: #636e72;
     
+    /* Decoration */
     --radius: 12px;
+    --shadow: 0 5px 15px rgba(9, 132, 227, 0.1);
 }
 
-/* =========================================
-   2. GLOBAL RESET & FONTS
-   ========================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -30,28 +26,25 @@ body {
     background-color: var(--bg-page);
     color: var(--text-main);
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
-    color: var(--navy); /* Headings are now Navy */
+    color: var(--navy);
     font-weight: 700;
 }
 
-a { text-decoration: none; color: var(--navy); transition: all 0.3s; }
+a { text-decoration: none; transition: all 0.3s; }
 
 /* =========================================
-   3. BIGGER & BOLDER NAVIGATION
+   2. NAVIGATION BAR
    ========================================= */
 nav {
     background-color: white;
-    padding: 15px 0;
-    border-bottom: 4px solid;
-    border-image: var(--happy-gradient) 1; /* Rainbow bottom border! */
+    padding: 20px 0;
     position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-bottom: 3px solid var(--periwinkle);
 }
 
 .nav-container {
@@ -65,13 +58,13 @@ nav {
 
 .nav-name {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem; /* Larger Name */
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--navy);
     display: flex; align-items: center; gap: 15px;
 }
 
-.cat-icon { width: 40px; transition: transform 0.2s; cursor: pointer; }
+.cat-icon { width: 40px; cursor: pointer; transition: transform 0.2s; }
 .cat-icon:hover { animation: explode-effect 0.6s forwards; }
 
 @keyframes explode-effect {
@@ -80,138 +73,90 @@ nav {
     100% { transform: scale(3) rotate(20deg); opacity: 0; }
 }
 
-.nav-links {
-    display: flex;
-    gap: 40px; /* More space between tabs */
-}
+.nav-links { display: flex; gap: 30px; }
 
 .nav-links a {
     color: var(--text-light);
-    font-size: 1.15rem; /* LARGER TEXT */
-    font-weight: 700;   /* BOLDER */
+    font-size: 1.1rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    padding-bottom: 5px;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--periwinkle);
-    border-bottom: 3px solid var(--turquoise); /* Cute underline */
+    color: var(--turquoise);
+    border-bottom: 2px solid var(--navy);
 }
 
 /* =========================================
-   4. HOME & ABOUT LAYOUTS
+   3. HORIZONTAL CARD LAYOUT
    ========================================= */
-.home-container, .profile-container, .page-container {
-    max-width: 1100px;
+.page-container {
+    max-width: 1000px;
     margin: 50px auto;
     padding: 0 20px;
-    width: 100%;
 }
 
-/* Home Split */
-.home-split {
-    display: flex; align-items: center; gap: 60px;
-    background: white; padding: 60px; border-radius: var(--radius);
-    box-shadow: 0 10px 30px rgba(9, 132, 227, 0.1);
-}
-.home-photo {
-    width: 280px; height: 280px; object-fit: cover; border-radius: 50%;
-    border: 5px solid white; box-shadow: 0 0 0 5px var(--periwinkle); /* Double border effect */
-}
-.text-section h1 {
-    font-size: 3.5rem;
-    background: var(--happy-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.intro-text { font-size: 1.2rem; color: var(--text-light); margin: 20px 0 30px 0; }
+.page-header { text-align: center; margin-bottom: 40px; }
 
-/* Buttons with Rainbow Gradient */
-.btn-main {
-    background: var(--happy-gradient);
-    color: white; padding: 12px 30px; border-radius: 50px; font-weight: bold;
-    box-shadow: 0 5px 15px rgba(140, 169, 255, 0.4);
-}
-.btn-main:hover { transform: translateY(-3px); color: white; }
-
-.btn-secondary {
-    background: white; color: var(--navy); border: 2px solid var(--navy);
-    padding: 10px 28px; border-radius: 50px; font-weight: bold;
-}
-.btn-secondary:hover { background: var(--navy); color: white; }
-
-/* About Page Sidebar */
-.profile-container { display: flex; gap: 40px; }
-.profile-sidebar { flex: 1; min-width: 250px; }
-.bio-content { flex: 2.5; background: white; padding: 40px; border-radius: var(--radius); box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-.contact-box { background: white; padding: 30px; border-radius: var(--radius); box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-.contact-box h3 { color: var(--turquoise); margin-bottom: 15px; }
-
-/* =========================================
-   5. HORIZONTAL TABS (The "Strip" Cards)
-   ========================================= */
-.project-list {
+/* The Container for the Cards */
+.card-stack {
     display: flex;
-    flex-direction: column; /* Stack the rows */
-    gap: 30px;
+    flex-direction: column;
+    gap: 40px; /* Space between each distinct card */
 }
 
+/* The Individual Card Style */
 .horizontal-card {
-    display: flex; /* Makes it side-by-side */
+    display: flex;
     background: white;
     border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border: 1px solid #f1f2f6;
+    box-shadow: var(--shadow);
+    border: 1px solid #e1e8ef;
     transition: transform 0.2s;
 }
 
-.horizontal-card:hover { transform: translateX(10px); /* Slides right on hover */ }
+.horizontal-card:hover {
+    transform: translateY(-5px); /* Lifts up slightly */
+    box-shadow: 0 10px 25px rgba(9, 132, 227, 0.15);
+}
 
-/* Image on the Left (30% width) */
-.card-image-side {
-    width: 30%;
-    min-height: 200px;
+/* Left side: Image */
+.card-img-container {
+    width: 35%; /* Takes up 35% of the card */
+    min-height: 250px;
+}
+.card-img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-/* Content on the Right (70% width) */
-.card-content-side {
-    width: 70%;
-    padding: 30px;
+/* Right side: Text */
+.card-content {
+    width: 65%;
+    padding: 35px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.card-content-side h2 { font-size: 1.5rem; color: var(--navy); margin-bottom: 5px; }
-.project-date { color: var(--turquoise); font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase; }
+.card-content h2 { font-size: 1.6rem; margin-bottom: 5px; color: var(--navy); }
+.project-date { color: var(--turquoise); font-weight: bold; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 15px; }
+.card-desc { color: var(--text-main); margin-bottom: 15px; }
 
-/* Tags */
-.tech-stack { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+/* Tags (Python, etc.) */
+.tech-stack { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
 .tech-stack span {
-    background: #e0fbfc; /* Light Turquoise bg */
-    color: #00cec9;       /* Dark Turquoise text */
-    padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 700;
+    background: #e0fbfc; /* Light Mint */
+    color: #00cec9;       /* Dark Turquoise */
+    padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;
 }
 
-/* The Link Button */
-.link-btn {
-    display: inline-block;
-    margin-top: 15px;
-    font-weight: bold;
-    color: var(--periwinkle);
-    font-size: 0.95rem;
-}
-.link-btn i { margin-left: 5px; transition: transform 0.2s; }
-.link-btn:hover i { transform: translateX(5px); }
-
-/* Mobile: Stack vertically */
+/* Mobile Fix */
 @media (max-width: 768px) {
     .horizontal-card { flex-direction: column; }
-    .card-image-side, .card-content-side { width: 100%; }
-    .card-image-side { height: 180px; }
-    .nav-container, .home-split, .profile-container { flex-direction: column; }
-    .nav-links { flex-direction: column; align-items: center; gap: 15px; }
+    .card-img-container, .card-content { width: 100%; }
+    .card-img-container { height: 200px; }
+    .nav-container { flex-direction: column; gap: 15px; }
 }
