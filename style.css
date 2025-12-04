@@ -3,18 +3,17 @@
    ========================================= */
 :root {
     /* The Palette */
-    --navy: #192a56;           /* Deep Midnight Blue (For the Nav Bar) */
-    --periwinkle: #6C5CE7;     /* Bright Purple-Blue (For Titles) */
+    --navy: #192a56;           /* Deep Midnight Blue (Nav & Text) */
+    --periwinkle: #6C5CE7;     /* Bright Purple-Blue (Titles) */
     --periwinkle-light: #a29bfe; 
-    --yellow: #f1c40f;         /* Golden Sun (For Accents) */
-    --cream: #fffdf7;          /* Warm Cream Background */
+    --yellow: #f1c40f;         /* Golden Sun (Accents) */
     
     /* The "Sun & Sky" Gradient */
     --happy-gradient: linear-gradient(135deg, var(--periwinkle-light) 0%, var(--yellow) 100%);
     
     /* Backgrounds */
-    --bg-page: var(--cream);
-    --bg-card: #FFFFFF;
+    --bg-page: #e1e8f0;        /* UPDATED: Darker Cool Blue-Grey */
+    --bg-card: #FFFFFF;        /* Pure White Cards */
     
     /* Text */
     --text-main: #2c3e50;      /* Dark Slate */
@@ -123,7 +122,7 @@ nav {
 
 .page-header { text-align: center; margin-bottom: 50px; }
 
-/* White Boxes */
+/* White Boxes - Now they pop against the dark background! */
 .box-card, .home-split, .bio-content, .contact-box, .cv-section {
     background: white;
     border-radius: var(--radius);
@@ -156,7 +155,7 @@ nav {
 .contact-box { padding: 30px; text-align: center; }
 .contact-box h3 { color: var(--periwinkle); margin-bottom: 10px; }
 
-/* --- IMAGES (Tilted vs Straight) --- */
+/* Images (Tilted vs Straight) */
 .float-img-right { 
     float: right; width: 220px; margin-left: 30px; margin-bottom: 20px; 
     border-radius: var(--radius); box-shadow: var(--shadow); transform: rotate(2deg); 
@@ -165,7 +164,6 @@ nav {
 .float-img-straight { 
     float: right; width: 220px; margin-left: 30px; margin-bottom: 20px; 
     border-radius: var(--radius); box-shadow: var(--shadow); 
-    /* No rotation! */
 }
 
 /* Research Cards */
@@ -176,6 +174,7 @@ nav {
 .card-img { width: 100%; height: 100%; object-fit: cover; }
 .card-content { width: 65%; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
 
+/* Headings inside cards */
 .card-content h2 { font-size: 1.6rem; margin-bottom: 5px; color: var(--periwinkle); }
 .project-date { color: var(--yellow); font-weight: bold; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 15px; text-shadow: 0px 0px 1px #ccc; }
 .card-desc { color: var(--text-main); margin-bottom: 20px; }
