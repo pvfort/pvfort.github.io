@@ -213,3 +213,23 @@ nav {
     .card-img-container { height: 200px; }
     .float-img-right { float: none; width: 100%; margin: 20px 0; transform: rotate(0deg); }
 }
+
+/* Image floating right WITHOUT tilt */
+.float-img-straight {
+    float: right; 
+    width: 220px; 
+    margin-left: 30px; 
+    margin-bottom: 20px; 
+    border-radius: var(--radius); 
+    box-shadow: var(--shadow);
+    /* No transform/rotate here! */
+}
+
+/* Mobile Fix (so it centers on phone screens) */
+@media (max-width: 800px) {
+    .float-img-straight { 
+        float: none; 
+        width: 100%; 
+        margin: 20px 0; 
+    }
+}
