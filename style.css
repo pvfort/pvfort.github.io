@@ -1,12 +1,12 @@
 /* =========================================
-   1. PERIWINKLE, YELLOW & NAVY THEME
+   1. COSMIC NAVY & SUNNY PERIWINKLE
    ========================================= */
 :root {
-    /* The Colors */
-    --navy: #192a56;           /* Deep Navy (Text/Headings) */
-    --periwinkle: #6C5CE7;     /* Purple-Blue (Primary) */
-    --periwinkle-light: #8CA9FF; 
-    --yellow: #f1c40f;         /* Bright Golden Yellow */
+    /* The Palette */
+    --navy: #192a56;           /* Deep Midnight Blue (For the Nav Bar) */
+    --periwinkle: #6C5CE7;     /* Bright Purple-Blue (For Titles) */
+    --periwinkle-light: #a29bfe; 
+    --yellow: #f1c40f;         /* Golden Sun (For Accents) */
     --cream: #fffdf7;          /* Warm Cream Background */
     
     /* The "Sun & Sky" Gradient */
@@ -37,24 +37,24 @@ body {
     min-height: 100vh;
 }
 
-/* Headings are Navy for Contrast */
+/* Titles are now Periwinkle! */
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
-    color: var(--navy);
+    color: var(--periwinkle);
     font-weight: 700;
 }
 
 a { text-decoration: none; transition: all 0.3s; }
 
 /* =========================================
-   2. NAVIGATION (Periwinkle + Yellow)
+   2. NAVIGATION (Navy Background)
    ========================================= */
 nav {
-    background-color: var(--periwinkle); 
+    background-color: var(--navy); /* Deep Navy Header */
     padding: 15px 0;
     position: sticky; top: 0; z-index: 1000;
-    box-shadow: 0 4px 15px rgba(25, 42, 86, 0.15);
-    border-bottom: 4px solid var(--yellow); /* Sunny Yellow Line */
+    box-shadow: 0 4px 15px rgba(25, 42, 86, 0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .nav-container {
@@ -70,11 +70,11 @@ nav {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
     font-weight: 800;
-    color: white;
+    color: white; /* Name stays white to pop against Navy */
     display: flex; align-items: center; gap: 10px;
 }
 
-/* Cat Icon is White */
+/* Cat Icon White */
 .cat-icon { width: 40px; cursor: pointer; transition: transform 0.2s; filter: brightness(0) invert(1); }
 .cat-icon:hover { animation: explode-effect 0.6s forwards; }
 
@@ -86,20 +86,29 @@ nav {
 
 .nav-links { list-style: none; display: flex; gap: 30px; }
 
-/* Links are White */
+/* Links Default: White */
 .nav-links a { 
-    color: rgba(255, 255, 255, 0.9); 
+    color: rgba(255, 255, 255, 0.85); 
     font-size: 1.1rem; 
     font-weight: 700; 
     position: relative; 
 }
 
-/* Hover turns Yellow */
-.nav-links a:hover, .nav-links a.active { color: var(--yellow); }
+/* THE GRADIENT TABS EFFECT */
+.nav-links a:hover, .nav-links a.active { 
+    /* This makes the text itself turn into a gradient! */
+    background: var(--happy-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+}
+
+/* Underline is also Gradient */
 .nav-links a::after {
     content: ''; display: block; width: 0; height: 3px;
-    background: var(--yellow);
+    background: var(--happy-gradient);
     transition: width 0.3s; border-radius: 2px;
+    margin-top: 2px;
 }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
@@ -133,13 +142,13 @@ nav {
 }
 .text-section h1 {
     font-size: 3.2rem; 
-    color: var(--navy);
+    color: var(--periwinkle); /* Periwinkle Title */
     margin-bottom: 15px;
 }
-.tagline { font-size: 1.2rem; font-weight: 700; color: var(--periwinkle); margin-bottom: 20px; }
+.tagline { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
 
-/* Divider is now Yellow */
-.divider { height: 5px; background: var(--yellow); width: 60px; margin: 15px 0 25px 0; border-radius: 10px; }
+/* Divider Gradient */
+.divider { height: 5px; background: var(--happy-gradient); width: 60px; margin: 15px 0 25px 0; border-radius: 10px; }
 
 /* About Page */
 .profile-container { display: flex; gap: 40px; }
@@ -158,9 +167,9 @@ nav {
 .card-content { width: 65%; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
 
 /* Headings inside cards */
-.card-content h2 { font-size: 1.6rem; margin-bottom: 5px; color: var(--navy); }
-/* Dates are now Periwinkle or Yellow - Let's use Gold/Yellow for contrast */
-.project-date { color: #f39c12; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 15px; }
+.card-content h2 { font-size: 1.6rem; margin-bottom: 5px; color: var(--periwinkle); }
+.project-date { color: var(--yellow); font-weight: bold; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 15px; text-shadow: 0px 0px 1px #ccc; }
+.card-desc { color: var(--text-main); margin-bottom: 20px; }
 
 /* Tech Stack Tags */
 .tech-stack { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
@@ -170,7 +179,7 @@ nav {
     border: 1px solid var(--yellow);
 }
 
-/* Buttons (Periwinkle -> Yellow Gradient) */
+/* Buttons (Gradient) */
 .btn-main { 
     background: var(--happy-gradient); 
     color: white; padding: 12px 30px; border-radius: 50px; font-weight: bold; 
@@ -178,21 +187,21 @@ nav {
 }
 .btn-main:hover { transform: translateY(-3px); color: white; }
 
-/* Secondary Button uses Navy Border */
+/* Secondary Button */
 .btn-secondary { 
-    background: white; color: var(--navy); 
-    border: 2px solid var(--navy); 
+    background: white; color: var(--periwinkle); 
+    border: 2px solid var(--periwinkle); 
     padding: 10px 28px; border-radius: 50px; font-weight: bold; display: inline-block; 
 }
-.btn-secondary:hover { background: var(--navy); color: white; }
+.btn-secondary:hover { background: var(--periwinkle); color: white; }
 
 /* Links */
 .link-btn { display: inline-block; margin-top: 15px; font-weight: bold; color: var(--periwinkle); }
-.link-btn:hover { text-decoration: underline; color: var(--yellow); }
+.link-btn:hover { text-decoration: underline; color: var(--navy); }
 
 /* CV Specifics */
 .cv-section { padding: 40px; margin-bottom: 30px; }
-.cv-title { font-size: 1.5rem; color: var(--navy); border-bottom: 2px solid var(--yellow); padding-bottom: 10px; margin-bottom: 20px; }
+.cv-title { font-size: 1.5rem; color: var(--periwinkle); border-bottom: 2px solid var(--yellow); padding-bottom: 10px; margin-bottom: 20px; }
 .download-btn { display: inline-block; background: var(--navy); color: white; padding: 10px 20px; border-radius: 50px; font-weight: bold; margin-bottom: 20px; }
 .download-btn:hover { background: var(--periwinkle); }
 
